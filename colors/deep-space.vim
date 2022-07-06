@@ -5,7 +5,7 @@
 highlight clear
 
 if exists('syntax_on')
-    syntax reset
+	syntax reset
 endif
 
 set background=dark
@@ -14,35 +14,36 @@ let g:colors_name = 'deep-space'
 let g:deepspace_italics = get(g:, 'deepspace_italics', 0)
 
 " Color Palette
+
 let s:gray1     = '#1b202a'
 let s:gray2     = '#232936'
 let s:gray3     = '#323c4d'
-let s:gray4     = '#51617d'
-let s:gray5     = '#9aa7bd'
-let s:red       = '#b15e7c'
-let s:green     = '#709d6c'
+let s:gray4     = '#667288'
+let s:gray5     = '#aeb9cc'
+let s:red       = '#c4537c'
+let s:green     = '#6ebd67'
 let s:yellow    = '#b5a262'
-let s:blue      = '#608cc3'
+let s:blue      = '#3f80cf'
 let s:purple    = '#8f72bf'
 let s:cyan      = '#56adb7'
-let s:orange    = '#b3785d'
+let s:orange    = '#c2704a'
 let s:pink      = '#c47ebd'
 
 function! s:HL(group, fg, bg, attr)
-    let l:attr = a:attr
-    if !g:deepspace_italics && l:attr ==# 'italic'
-        let l:attr = 'none'
-    endif
+	let l:attr = a:attr
+	if !g:deepspace_italics && l:attr ==# 'italic'
+		let l:attr = 'none'
+	endif
 
-    if !empty(a:fg)
-        exec 'hi ' . a:group . ' guifg=' . a:fg
-    endif
-    if !empty(a:bg)
-        exec 'hi ' . a:group . ' guibg=' . a:bg
-    endif
-    if !empty(a:attr)
-        exec 'hi ' . a:group . ' gui=' . l:attr . ' cterm=' . l:attr
-    endif
+	if !empty(a:fg)
+		exec 'hi ' . a:group . ' guifg=' . a:fg
+	endif
+	if !empty(a:bg)
+		exec 'hi ' . a:group . ' guibg=' . a:bg
+	endif
+	if !empty(a:attr)
+		exec 'hi ' . a:group . ' gui=' . l:attr . ' cterm=' . l:attr
+	endif
 endfun
 
 " Editor Highlights
@@ -60,7 +61,7 @@ call s:HL('VertSplit',                      s:gray4,    s:gray1,    'none')
 call s:HL('Folded',                         s:gray3,    s:gray1,    '')
 call s:HL('FoldColumn',                     s:cyan,     s:gray1,    '')
 call s:HL('SignColumn',                     s:gray2,    s:gray1,    '')
-call s:HL('LineNr',                         s:gray3,    '',         '')
+call s:HL('LineNr',                         s:gray4,    '',         '')
 call s:HL('CursorLineNr',                   s:gray5,    s:gray2,    'none')
 call s:HL('MatchParen',                     s:gray2,    s:pink,     'bold')
 call s:HL('ModeMsg',                        s:green,    '',         '')
@@ -187,20 +188,20 @@ call s:HL('SignifySignChange',              s:yellow,   '',         '')
 call s:HL('SignifySignDelete',              s:red,      '',         '')
 
 if has("nvim") && exists("&termguicolors") && &termguicolors
-    let g:terminal_color_0  = "#1b202a"
-    let g:terminal_color_8  = "#232936"
-    let g:terminal_color_1  = "#b15e7c"
-    let g:terminal_color_9  = "#b3785d"
-    let g:terminal_color_2  = "#709d6c"
-    let g:terminal_color_10 = "#709d6c"
-    let g:terminal_color_3  = "#b5a262"
-    let g:terminal_color_11 = "#d5b875"
-    let g:terminal_color_4  = "#608cc3"
-    let g:terminal_color_12 = "#608cc3"
-    let g:terminal_color_5  = "#8f72bf"
-    let g:terminal_color_13 = "#c47ebd"
-    let g:terminal_color_6  = "#56adb7"
-    let g:terminal_color_14 = "#51617d"
-    let g:terminal_color_7  = "#323c4d"
-    let g:terminal_color_15 = "#9aa7bd"
+	let g:terminal_color_0  = "#1b202a"
+	let g:terminal_color_8  = "#232936"
+	let g:terminal_color_1  = "#b15e7c"
+	let g:terminal_color_9  = "#b3785d"
+	let g:terminal_color_2  = "#709d6c"
+	let g:terminal_color_10 = "#709d6c"
+	let g:terminal_color_3  = "#b5a262"
+	let g:terminal_color_11 = "#d5b875"
+	let g:terminal_color_4  = "#608cc3"
+	let g:terminal_color_12 = "#608cc3"
+	let g:terminal_color_5  = "#8f72bf"
+	let g:terminal_color_13 = "#c47ebd"
+	let g:terminal_color_6  = "#56adb7"
+	let g:terminal_color_14 = "#51617d"
+	let g:terminal_color_7  = "#323c4d"
+	let g:terminal_color_15 = "#9aa7bd"
 endif
